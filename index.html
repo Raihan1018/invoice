@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- daisyUI + Tailwind CSS cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+      .serif {
+        font-family: "DM Serif Display", serif;
+      }
+      .jost {
+        font-family: "Jost", sans-serif;
+      }
+    </style>
+    <title>Invoice</title>
+  </head>
+  <body class="bg-stone-200 p-5">
+    <!-- Invoice header -->
+    <main
+      class="container mx-auto max-w-screen-md bg-white p-5 rounded-lg shadow-md print:bg-white"
+    >
+      <div class="flex justify-between items-center">
+        <!-- logo -->
+        <div>
+          <h1 class="jost text-xl">
+            <span class="serif text-purple-700">NR</span> NexaSoft
+          </h1>
+        </div>
+        <!-- Text -->
+        <div>
+          <h1 class="serif text-xl">Invoice</h1>
+        </div>
+      </div>
+      <div class="divider"></div>
+
+      <div class="flex justify-between items-center">
+        <div>
+          <h2 class="jost"><span class="serif">Date:</span> 14/07/2025</h2>
+        </div>
+        <div>
+          <h2 class="jost"><span class="serif">Invoice No:</span> 16835</h2>
+        </div>
+      </div>
+      <div class="divider"></div>
+
+      <div class="flex justify-between">
+        <div>
+          <h2 class="serif">Invoiced To:</h2>
+          <h3 class="jost">Smith Rhodes</h3>
+          <h4 class="jost">15 Hodges Mews, High Wycombe</h4>
+          <h5 class="jost">HP12 3JL</h5>
+          <p class="jost">United Kingdom</p>
+        </div>
+        <!--  -->
+        <div class="text-right">
+          <h2 class="serif">Pay To:</h2>
+          <h3 class="jost">Koice Inc</h3>
+          <h4 class="jost">2705 N. Enterprise St</h4>
+          <h5 class="jost">Orange, CA 92865</h5>
+          <p class="jost">contact@koiceinc.com</p>
+        </div>
+      </div>
+
+      <!-- table -->
+      <div>
+        <div class="overflow-x-auto mt-5">
+          <table class="table">
+            <!-- head -->
+            <thead>
+              <tr class="serif text-black">
+                <th>Service</th>
+                <th>Description</th>
+                <th>Rate</th>
+                <th>QTY</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- row 1 -->
+              <tr class="bg-base-200 jost">
+                <th class="font-normal">Design</th>
+                <td>Creating a website design</td>
+                <td>$50.00</td>
+                <td>10</td>
+                <td>$500.00</td>
+              </tr>
+              <!-- row 2 -->
+              <tr class="jost">
+                <th class="font-normal">Development</th>
+                <td>website Development</td>
+                <td>$120.00</td>
+                <td>10</td>
+                <td>$1200.00</td>
+              </tr>
+              <!-- row 3 -->
+              <tr class="jost">
+                <th class="font-normal">SEO</th>
+                <td>Optimize the site for search</td>
+                <td>$450.00</td>
+                <td>1</td>
+                <td>$450.00</td>
+              </tr>
+              <!-- row sub total -->
+              <tr class="bg-base-200">
+                <th></th>
+                <td></td>
+                <td></td>
+                <td class="serif">Sub Total:</td>
+                <td class="jost">$<span>2150.00</span></td>
+              </tr>
+              <!-- row tax -->
+              <tr class="bg-base-200">
+                <th></th>
+                <td></td>
+                <td></td>
+                <td class="serif">Tax:</td>
+                <td class="jost">$<span>215.00</span></td>
+              </tr>
+              <!-- row total -->
+              <tr class="bg-base-200">
+                <th></th>
+                <td></td>
+                <td></td>
+                <td class="serif">Total:</td>
+                <td class="jost">$<span>2365.00</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- NOTE -->
+      <div class="text-center my-5">
+        <h2 class="jost">
+          <span class="serif">NOTE:</span> This is computer generated receipt
+          and does not require physical signature.
+        </h2>
+      </div>
+
+      <!-- print and Download  -->
+      <div class="text-center my-5">
+        <button id="print-button" class="btn print:hidden jost">
+          Print & Download
+        </button>
+      </div>
+    </main>
+    <!-- custom JavaScript -->
+    <script src="script/script.js"></script>
+  </body>
+</html>
